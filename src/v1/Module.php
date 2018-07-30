@@ -9,7 +9,7 @@ namespace powerkernel\yiipage\v1;
 
 /**
  * Class Module
- * User API Module
+ * Page API Module
  */
 class Module extends \yii\base\Module
 {

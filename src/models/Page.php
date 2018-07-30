@@ -14,12 +14,34 @@ use Yii;
  *
  * @property \MongoDB\BSON\ObjectID $_id
  * @property string $slug
- * @property integer $show_description
- * @property integer $show_update_date
+ * @property boolean $show_description
+ * @property boolean $show_update_date
  */
 class Page extends \yii\mongodb\ActiveRecord
 {
 
+    /**
+     * @inheritdoc
+     * @inheritdoc
+     */
+    public static function collectionName()
+    {
+        return 'page_db';
+    }
+
+    /**
+     * @inheritdoc
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            '_id',
+            'slug',
+            'show_description',
+            'show_update_date'
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -45,6 +67,4 @@ class Page extends \yii\mongodb\ActiveRecord
             'show_update_date' => Yii::t('page', 'Show Update Date'),
         ];
     }
-
-
 }

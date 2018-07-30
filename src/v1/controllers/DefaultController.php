@@ -23,7 +23,7 @@ class DefaultController extends RestController
     {
         return [
             'success' => true,
-            'module' => 'User API',
+            'module' => 'Page API',
             'version' => '1.0.0'
         ];
     }
