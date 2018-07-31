@@ -11,7 +11,7 @@ return [
             '__class' => \yii\rest\UrlRule::class,
             'pluralize' => false,
             'controller' => [
-                //'v1/page/admin' => 'v1/page/admin',
+                'v1/pages' => 'v1/page/page',
                 'v1/page/admin'
             ],
             'tokens' => [
