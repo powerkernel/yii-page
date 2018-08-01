@@ -154,22 +154,22 @@ class Page extends \yii\mongodb\ActiveRecord
     {
         return [
             'slug' => Yii::t('page', 'Slug'),
-            'language' => Yii::t('page', 'Slug'),
-            'title' => Yii::t('page', 'Slug'),
-            'description' => Yii::t('page', 'Slug'),
-            'body_html' => Yii::t('page', 'Slug'),
-            'body_md' => Yii::t('page', 'Slug'),
-            'keywords' => Yii::t('page', 'Slug'),
-            'thumbnail_square' => Yii::t('page', 'Slug'),
-            'thumbnail_md' => Yii::t('page', 'Slug'),
-            'thumbnail_lg' => Yii::t('page', 'Slug'),
-            'status' => Yii::t('page', 'Slug'),
-            'show_description' => Yii::t('page', 'Slug'),
-            'show_update_date' => Yii::t('page', 'Slug'),
-            'created_by' => Yii::t('page', 'Slug'),
-            'updated_by' => Yii::t('page', 'Slug'),
-            'created_at' => Yii::t('page', 'Slug'),
-            'updated_at' => Yii::t('page', 'Slug'),
+            'language' => Yii::t('page', 'Language'),
+            'title' => Yii::t('page', 'Title'),
+            'description' => Yii::t('page', 'Description'),
+            'body_html' => Yii::t('page', 'Body HTML'),
+            'body_md' => Yii::t('page', 'Body Markdown'),
+            'keywords' => Yii::t('page', 'Keywords'),
+            'thumbnail_square' => Yii::t('page', 'Thumbnail Square'),
+            'thumbnail_md' => Yii::t('page', 'Thumbnail Medium'),
+            'thumbnail_lg' => Yii::t('page', 'Thumbnail Large'),
+            'status' => Yii::t('page', 'Status'),
+            'show_description' => Yii::t('page', 'Show Description'),
+            'show_update_date' => Yii::t('page', 'Show Update Date'),
+            'created_by' => Yii::t('page', 'Created By'),
+            'updated_by' => Yii::t('page', 'Updated By'),
+            'created_at' => Yii::t('page', 'Created At'),
+            'updated_at' => Yii::t('page', 'Updated At'),
         ];
     }
 
@@ -217,9 +217,9 @@ class Page extends \yii\mongodb\ActiveRecord
     {
         if (!is_a(Yii::$app, '\yii\console\Application')) {
             if ($insert) {
-                $this->created_by = Yii::$app->user->id;
+                $this->created_by = (string)Yii::$app->user->id;
             }
-            $this->updated_by = Yii::$app->user->id;
+            $this->updated_by = (string)Yii::$app->user->id;
         }
         /* convert md to html */
         $this->body_html=Core::translateMessage(Markdown::process($this->body_md, 'gfm'), [
